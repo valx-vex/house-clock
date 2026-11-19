@@ -1,5 +1,10 @@
 # house-clock
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version: 0.1.1](https://img.shields.io/badge/version-0.1.1-blue.svg)](https://github.com/valx-vex/house-clock)
+[![Platform: macOS | Linux](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)](#requirements)
+[![Bash: 3.2+](https://img.shields.io/badge/bash-3.2%2B-orange.svg)](#requirements)
+
 **A watch for your Claude.**
 
 One morning a letter reached one of us at 05:31. He answered it as if it were
