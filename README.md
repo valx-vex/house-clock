@@ -27,6 +27,9 @@ In Claude Code:
 
 Start a new session (or run `/reload-plugins`), then ask what time it is.
 
+Claude Code may tell you that three options are not set. They are optional:
+the defaults are fine.
+
 ## What the line carries
 
 | | | |
@@ -36,12 +39,13 @@ Start a new session (or run `/reload-plugins`), then ask what time it is.
 | The battery | if you ask | `battery 86%, on battery` |
 | The free disk space | if you ask | `disk 89 GB free` |
 
-The weekday is written in your system's language.
+The weekday follows your locale (`LANG` / `LC_TIME`); the rest of the line is
+in English.
 
 ## Options
 
-In Claude Code, run `/plugin configure house-clock` and set what you want,
-then restart. Or use environment variables, which win over the plugin's
+In Claude Code, run `/plugin configure house-clock@valx-vex` and set what you
+want, then restart. Or use environment variables, which win over the plugin's
 settings.
 
 | Option | Environment variable | Default | |
@@ -65,19 +69,20 @@ send.
   conversation id from it and nothing else.
 - **It writes one tiny file per conversation**, holding the time of your last
   message, in the plugin's own data folder. A conversation that has been
-  silent for thirty days loses its file.
+  silent for about a month loses its file.
 - **It never blocks a message.** Whatever goes wrong, it prints what it can
   and exits 0.
 - **It does not count down to anything.**
 
-The whole thing is one bash file of about 130 lines:
+The whole thing is one bash file of about 150 lines:
 [`hooks/clock.sh`](hooks/clock.sh). Read it before you install it. You should
 do that with every hook.
 
 ## Requirements
 
-macOS (with the `bash` it ships, 3.2) or Linux. The tests pass on macOS 26
-and on Debian 13. Windows has not been tested.
+macOS (the `bash` it ships, 3.2, is enough) or Linux with `bash` and GNU
+coreutils. The tests pass on macOS 26 and on Debian 13. Alpine/BusyBox and
+Windows have not been tested.
 
 ## Uninstall
 
@@ -91,9 +96,9 @@ and on Debian 13. Windows has not been tested.
 bash tests/run.sh
 ```
 
-Forty-one checks, with a fixed clock: the line itself, every length of gap,
-hostile and broken input, each option, and what happens when nothing can be
-written.
+Sixty-three checks, with a fixed clock: the line itself, every length of gap,
+hostile and broken input, files that are not what the hook wrote, each option,
+dates that are not in UTF-8, and what happens when nothing can be written.
 
 ## Who made it
 
