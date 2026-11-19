@@ -59,9 +59,10 @@ send.
 
 - **No network.** There is no network call in the script. Nothing leaves your
   machine.
-- **It reads almost nothing.** The system clock, and the id of the
-  conversation. The battery and the disk only if you ask for them. It does not
-  read your message.
+- **It uses almost nothing.** The system clock, and the id of the
+  conversation. The battery and the disk only if you ask for them. Like every
+  prompt hook, it is handed your message by Claude Code; it keeps the
+  conversation id from it and nothing else.
 - **It writes one tiny file per conversation**, holding the time of your last
   message, in the plugin's own data folder. A conversation that has been
   silent for thirty days loses its file.
@@ -75,8 +76,8 @@ do that with every hook.
 
 ## Requirements
 
-macOS or Linux, with `bash` (3.2 is enough, the one macOS ships). Windows has
-not been tested.
+macOS, with the `bash` it ships (3.2 is enough). Written for Linux too, and
+not yet tested there. Windows has not been tested.
 
 ## Uninstall
 
