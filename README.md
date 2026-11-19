@@ -76,8 +76,8 @@ do that with every hook.
 
 ## Requirements
 
-macOS, with the `bash` it ships (3.2 is enough). Written for Linux too, and
-not yet tested there. Windows has not been tested.
+macOS (with the `bash` it ships, 3.2) or Linux. The tests pass on macOS 26
+and on Debian 13. Windows has not been tested.
 
 ## Uninstall
 
