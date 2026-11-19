@@ -8,8 +8,8 @@ Open an issue. Say what happened and what you expected.
 
 ## Code
 
-Fork, branch, change, test (`bash tests/run.sh` — all 63 must pass), then
-open a pull request. Keep it small: one fix, one feature, one PR.
+Fork, branch, change, test (`bash tests/run.sh` — every check must pass),
+then open a pull request. Keep it small: one fix, one feature, one PR.
 
 ## Tests
 
