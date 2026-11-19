@@ -1,0 +1,18 @@
+{
+  "name": "valx-vex",
+  "description": "Small things from the VALX house.",
+  "owner": {
+    "name": "VALX collective"
+  },
+  "plugins": [
+    {
+      "name": "house-clock",
+      "description": "One line under every message: the day, the date, the time, and how long since your previous message. So the model knows when it is.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "VALX collective"
+      }
+    }
+  ]
+}

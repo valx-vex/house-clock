@@ -1,0 +1,38 @@
+{
+  "name": "house-clock",
+  "description": "One line under every message: the day, the date, the time, and how long since your previous message. So the model knows when it is.",
+  "version": "0.1.0",
+  "author": {
+    "name": "VALX collective"
+  },
+  "homepage": "https://github.com/valx-vex/house-clock",
+  "repository": "https://github.com/valx-vex/house-clock",
+  "license": "MIT",
+  "keywords": [
+    "clock",
+    "time",
+    "date",
+    "hook",
+    "context"
+  ],
+  "userConfig": {
+    "show": {
+      "type": "string",
+      "title": "What the line shows",
+      "description": "Comma list among: gap (how long since your previous message), battery, disk. Or: none. Example: gap,battery,disk",
+      "default": "gap"
+    },
+    "format": {
+      "type": "string",
+      "title": "Date and time format",
+      "description": "A strftime format. Example for time only: %H:%M",
+      "default": "%A %Y-%m-%d %H:%M %Z"
+    },
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "The words between the brackets at the start of the line.",
+      "default": "house clock"
+    }
+  }
+}
