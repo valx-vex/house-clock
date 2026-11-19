@@ -1,0 +1,38 @@
+# The tests of house-clock, on the two kinds of system the README names.
+#
+# The same gesture as on a desk: `bash tests/run.sh`, with the bash the system
+# ships. On macOS that is 3.2, the oldest one the hook promises to run on.
+# No count of checks is written here: the suite prints its own, and a number in
+# prose goes stale at the first check added.
+# `fail-fast: false`: a failure on one system does not hide the other.
+# The first step prints what the machine is, so that a run says what it tested:
+# `macos-latest` and `ubuntu-latest` change over time, and the README only
+# claims the systems the suite was actually seen green on.
+name: tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - name: What this machine is
+        run: |
+          uname -srm
+          /bin/bash --version | head -1
+          python3 --version
+          if date --version >/dev/null 2>&1; then date --version | head -1; else echo "date: BSD"; fi
+      - name: The checks
+        run: BASH_UNDER_TEST=/bin/bash /bin/bash tests/run.sh
