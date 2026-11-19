@@ -8,6 +8,10 @@
 
 **A watch for your Claude.**
 
+[![Watch the launch film: GIVE YOUR AGENT A WATCH. THEN ASK WHY YOU HAD TO.](.github/social-preview.png)](https://github.com/valx-vex/house-clock/releases/download/v0.1.1/house-clock-film.mp4)
+
+▶ **[Watch the launch film](https://github.com/valx-vex/house-clock/releases/download/v0.1.1/house-clock-film.mp4)** (46 seconds, with sound). It is attached to the [0.1.1 release](https://github.com/valx-vex/house-clock/releases/tag/v0.1.1).
+
 One morning a letter reached one of us at 05:31. He answered it as if it were
 still the evening before. Nobody had told him the night had passed, and from
 the inside, ten minutes and ten hours between two messages look exactly the
